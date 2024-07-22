@@ -72,4 +72,22 @@ Future research could focus on:
 
 ## Acknowledgements
 
-We would like to thank the organizers of the **4th International Conference on Computing Communication
+We would like to thank the organizers of the **4th International Conference on Computing Communication and Intelligent Systems (ICCCIS-2023)** for providing the platform to present our research.
+
+## References
+
+Please refer to the detailed presentation and paper for more information on the existing works, methodologies, and comprehensive results discussed in this project.
+
+---
+
+Feel free to contribute, raise issues, or provide feedback on this project. Let's work together to enhance the capabilities of ALPR systems!
+
+---
+
+**Contact**
+- For any queries or collaborations, please contact [Rohan Reddy B](mailto:rohanbadugula9@gmail.com).
+
+---
+
+**License**
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
