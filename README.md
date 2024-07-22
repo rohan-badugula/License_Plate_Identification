@@ -7,16 +7,10 @@ This repository contains the implementation of an Automatic License Plate Recogn
 ## Authors
 - **Rohan Reddy B**
 - **Gunti Swathi**
-- **Himesh Sountharrajan S**
-
-## Affiliation
-- Department of Computer Science and Engineering
-- Amrita School of Computing, Amrita VishwaVidyapeetham, Chennai Campus
 
 Presented at the **4th International Conference on Computing Communication and Intelligent Systems (ICCCIS-2023)**, 3-4 November 2023.
 
 ## Problem Statement
-
 Manual vehicle identification via license plates is time-consuming and requires advanced Automatic License Plate Recognition (ALPR) systems for accurate and swift identification, impacting traffic control and safety. Existing ALPR methods often struggle with issues like lighting variations and complex backgrounds, necessitating the use of advanced deep learning models.
 
 ## Proposed Solution
