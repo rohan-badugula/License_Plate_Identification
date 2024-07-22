@@ -29,6 +29,7 @@ This research proposes a two-stage ALPR system that employs:
 EfficientNet B7 is a highly accurate, compact, and fast pre-trained CNN model trained on the Imagenet dataset, excelling in image recognition tasks.
 
 ## Methodology
+![architecture](images/img3.jpg)
 
 ### License Plate Detection
 YOLOv8 processes an image and its annotation file, outputting bounding boxes, class labels, and confidence scores. It is designed for two classes: license plate and background. The detection involves:
