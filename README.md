@@ -42,6 +42,7 @@ YOLOv8 processes an image and its annotation file, outputting bounding boxes, cl
 EfficientNet B7, after extensive evaluation, emerged as the top performer for license plate character recognition among pretrained CNN models with 98.22% accuracy. Its exceptional performance led to its selection as the optimal choice for character recognition in the ALPR system.
 
 ## Datasets Utilized
+
 ![Dataset](images/img2.jpg)
 
 
@@ -58,11 +59,13 @@ EfficientNet B7, after extensive evaluation, emerged as the top performer for li
 
 ### License Plate Detection Results
 - **YOLOv8** achieved high accuracy in license plate detection, outperforming traditional methods significantly.
+
 ![Detection](images/img6.jpg)
 
 
 ### Character Recognition Results
 - **EfficientNet B7** demonstrated a superior performance with a character recognition accuracy of 98.22%, making it the optimal choice for our ALPR system.
+
 ![character_barchart](images/img4.jpg)
 ![character_barchart](images/img5.jpg)
 
