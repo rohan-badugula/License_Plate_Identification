@@ -63,8 +63,8 @@ EfficientNet B7, after extensive evaluation, emerged as the top performer for li
 
 ### Character Recognition Results
 - **EfficientNet B7** demonstrated a superior performance with a character recognition accuracy of 98.22%, making it the optimal choice for our ALPR system.
-![character_barchart](images/img4)
-![character_barchart](images/img5)
+![character_barchart](images/img4.jpg)
+![character_barchart](images/img5.jpg)
 
 
 ## Conclusion
@@ -72,10 +72,10 @@ EfficientNet B7, after extensive evaluation, emerged as the top performer for li
 The proposed ALPR system, combining YOLOv8 for license plate detection and EfficientNet B7 for character recognition, significantly enhances the accuracy and efficiency of automatic license plate identification. This system addresses the challenges faced by existing ALPR methods and provides a robust solution for real-world applications.
 
 ## Testing on a Sample Camera captured Image
-![character_barchart](images/img7)
+![character_barchart](images/img7.jpg)
 
 ## Overall Result on Custom test set
-![character_barchart](images/img8)
+![character_barchart](images/img8.jpg)
 
 
 ## Future Work
