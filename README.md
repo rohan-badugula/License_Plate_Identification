@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the implementation of an Automatic License Plate Recognition System (ALPRS) leveraging the capabilities of YOLOv8 for license plate detection and EfficientNet B7 for character recognition. This project aims to enhance the accuracy and efficiency of license plate recognition systems, particularly in real-world scenarios.
+This repository contains the implementation of an Automatic License Plate Recognition System (ALPRS) leveraging the capabilities of YOLOv8 for license plate detection and EfficientNet B7 for character recognition. This project aims to enhance the accuracy and efficiency of license plate recognition systems, particularly in real-world scenarios.   
 
 ## Authors
 - **Rohan Reddy B**
@@ -42,6 +42,8 @@ YOLOv8 processes an image and its annotation file, outputting bounding boxes, cl
 EfficientNet B7, after extensive evaluation, emerged as the top performer for license plate character recognition among pretrained CNN models with 98.22% accuracy. Its exceptional performance led to its selection as the optimal choice for character recognition in the ALPR system.
 
 ## Datasets Utilized
+![Dataset](images/img2.jpg)
+
 
 1. **Artificial Mercosur License Plates Dataset**:
    - 3840 images of license plates from five South American countries.
@@ -56,13 +58,25 @@ EfficientNet B7, after extensive evaluation, emerged as the top performer for li
 
 ### License Plate Detection Results
 - **YOLOv8** achieved high accuracy in license plate detection, outperforming traditional methods significantly.
+![Detection](images/img6.jpg)
+
 
 ### Character Recognition Results
 - **EfficientNet B7** demonstrated a superior performance with a character recognition accuracy of 98.22%, making it the optimal choice for our ALPR system.
+![character_barchart](images/img4)
+![character_barchart](images/img5)
+
 
 ## Conclusion
 
 The proposed ALPR system, combining YOLOv8 for license plate detection and EfficientNet B7 for character recognition, significantly enhances the accuracy and efficiency of automatic license plate identification. This system addresses the challenges faced by existing ALPR methods and provides a robust solution for real-world applications.
+
+## Testing on a Sample Camera captured Image
+![character_barchart](images/img7)
+
+## Overall Result on Custom test set
+![character_barchart](images/img8)
+
 
 ## Future Work
 
