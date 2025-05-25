@@ -1,107 +1,163 @@
-# Automatic License Plate Identification Using YOLOv8 and EfficientNet B7
+# 🚗 Automatic License Plate Recognition Using YOLOv8 and EfficientNet B7
 
-## Overview
+📄 **Published Paper:** [IEEE Xplore - ICCCIS 2023](https://ieeexplore.ieee.org/document/10425775)
 
-This repository contains the implementation of an Automatic License Plate Recognition System (ALPRS) leveraging the capabilities of YOLOv8 for license plate detection and EfficientNet B7 for character recognition. This project aims to enhance the accuracy and efficiency of license plate recognition systems, particularly in real-world scenarios.   
+> A two-stage ALPR system leveraging YOLOv8 for robust license plate detection and EfficientNet B7 for accurate character recognition.
 
-## Authors
+---
+
+## 🧠 Overview
+
+This repository contains the implementation of an **Automatic License Plate Recognition System (ALPRS)** designed to perform real-time vehicle identification with high accuracy. The system utilizes:
+
+- 🔍 **YOLOv8** – for detecting license plates from images.
+- 🔤 **EfficientNet B7** – for recognizing characters on the plates.
+
+This project addresses common ALPR challenges such as lighting variations and complex backgrounds using state-of-the-art deep learning techniques.
+
+---
+
+## 👨‍💻 Authors
+
 - **Rohan Reddy B**
 - **Gunti Swathi**
 
-Presented at the **4th International Conference on Computing Communication and Intelligent Systems (ICCCIS-2023)**, 3-4 November 2023.
+🎤 *Presented at the 4th International Conference on Computing Communication and Intelligent Systems (ICCCIS-2023), 3–4 November 2023.*
 
-## Problem Statement
-Manual vehicle identification via license plates is time-consuming and requires advanced Automatic License Plate Recognition (ALPR) systems for accurate and swift identification, impacting traffic control and safety. Existing ALPR methods often struggle with issues like lighting variations and complex backgrounds, necessitating the use of advanced deep learning models.
+---
 
-## Proposed Solution
+## 🚦 Problem Statement
 
-This research proposes a two-stage ALPR system that employs:
-- **YOLOv8** for license plate detection.
-- **EfficientNet B7** for character recognition.
+Traditional manual vehicle identification is slow and prone to errors. Existing ALPR systems often fail in uncontrolled environments. This project aims to:
+- Improve detection accuracy under real-world conditions.
+- Achieve high-speed recognition suitable for traffic and surveillance systems.
 
-### Key Improvements of YOLOv8
-- Anchor-free detection
-- Unique backbone network
-- Pioneering loss function
-- Space-efficient spatial pyramid pooling layer
+---
 
-### EfficientNet B7 for Character Recognition
-EfficientNet B7 is a highly accurate, compact, and fast pre-trained CNN model trained on the Imagenet dataset, excelling in image recognition tasks.
+## 💡 Proposed Solution
 
-## Methodology
-![architecture](images/img3.jpg)
+We propose a **two-stage deep learning-based ALPR system**:
 
-### License Plate Detection
-YOLOv8 processes an image and its annotation file, outputting bounding boxes, class labels, and confidence scores. It is designed for two classes: license plate and background. The detection involves:
-- Grid-based detection
-- High-level feature extraction
-- Non-maximum suppression
-- Post-processing for result refinement
+### 1. License Plate Detection
+Utilizes **YOLOv8**, a state-of-the-art object detection model with:
+- Anchor-free architecture
+- Lightweight backbone
+- Advanced loss function
+- Spatial pyramid pooling
 
-### Character Recognition
-EfficientNet B7, after extensive evaluation, emerged as the top performer for license plate character recognition among pretrained CNN models with 98.22% accuracy. Its exceptional performance led to its selection as the optimal choice for character recognition in the ALPR system.
+### 2. Character Recognition
+Uses **EfficientNet B7**, a high-performing CNN pre-trained on ImageNet, known for:
+- High accuracy
+- Lower computational cost
+- Robust generalization
 
-## Datasets Utilized
+---
+
+## 🛠️ Methodology
+
+![System Architecture](images/img3.jpg)
+
+### 🔲 Stage 1: License Plate Detection with YOLOv8
+- Trained for two classes: license plate and background
+- Steps:
+  - Grid-based localization
+  - Non-Maximum Suppression (NMS)
+  - Post-processing refinements
+
+### 🔡 Stage 2: Character Recognition with EfficientNet B7
+- Tested multiple CNN models — EfficientNet B7 achieved the best accuracy.
+- Final accuracy: **98.22%**
+
+---
+
+## 📊 Datasets Used
 
 ![Dataset](images/img2.jpg)
 
+| Dataset Type | Description |
+|--------------|-------------|
+| **Artificial Mercosur** | 3,840 license plate images from 5 South American countries |
+| **Open-source OCR** | 37,623 alphanumeric characters (0–9, A–Z) |
+| **Custom Test Set** | 500 real-world annotated vehicle images |
 
-1. **Artificial Mercosur License Plates Dataset**:
-   - 3840 images of license plates from five South American countries.
+---
 
-2. **Open-source Character Recognition Dataset**:
-   - 37623 images encoding digits and letters numerically from 0 to 35, ensuring balanced character distribution.
+## 📈 Results & Analysis
 
-3. **Novel Testing Dataset**:
-   - 500 images, each accompanied by its respective plate number for evaluation purposes.
+### 🔍 License Plate Detection
 
-## Results and Discussion
-
-### License Plate Detection Results
-- **YOLOv8** achieved high accuracy in license plate detection, outperforming traditional methods significantly.
+YOLOv8 outperformed traditional detectors in both precision and recall.
 
 ![Detection](images/img6.jpg)
 
+### 🔡 Character Recognition
 
-### Character Recognition Results
-- **EfficientNet B7** demonstrated a superior performance with a character recognition accuracy of 98.22%, making it the optimal choice for our ALPR system.
+EfficientNet B7 achieved:
+- **98.22% character-level accuracy**
+- Superior generalization on unseen license plate styles
 
-![character_barchart](images/img4.jpg)
-![character_barchart](images/img5.jpg)
-
-
-## Conclusion
-
-The proposed ALPR system, combining YOLOv8 for license plate detection and EfficientNet B7 for character recognition, significantly enhances the accuracy and efficiency of automatic license plate identification. This system addresses the challenges faced by existing ALPR methods and provides a robust solution for real-world applications.
-
-## Testing on a Sample Camera captured Image
-![character_barchart](images/img7.jpg)
-
-## Overall Result on Custom test set
-![character_barchart](images/img8.jpg)
-
-
-## Future Work
-
-Future research could focus on:
-- Enhancing the system's robustness to various environmental conditions.
-- Expanding the dataset to include more diverse license plate formats.
-- Integrating real-time processing capabilities for on-the-fly license plate recognition.
-
-## Acknowledgements
-
-We would like to thank the organizers of the **4th International Conference on Computing Communication and Intelligent Systems (ICCCIS-2023)** for providing the platform to present our research.
+![Character Bar Chart](images/img4.jpg)
+![Character Bar Chart](images/img5.jpg)
 
 ---
 
-Feel free to contribute, raise issues, or provide feedback on this project. Let's work together to enhance the capabilities of ALPR systems!
+## 🧪 Real-World Testing
+
+### Sample Inference on Camera-Captured Image
+![Sample Result](images/img7.jpg)
+
+### Evaluation on Custom Test Dataset
+![Overall Result](images/img8.jpg)
 
 ---
 
-**Contact**
-- For any queries or collaborations, please contact [Rohan Reddy B](mailto:rohanbadugula9@gmail.com).
+## 🧾 Conclusion
+
+This ALPR system demonstrates significant improvements in license plate recognition by combining:
+- YOLOv8’s modern detection techniques
+- EfficientNet B7’s precision in OCR tasks
+
+The system is robust, lightweight, and suitable for deployment in real-time surveillance applications.
 
 ---
 
-**License**
-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🔭 Future Work
+
+- Increase robustness under challenging weather and lighting conditions
+- Extend dataset diversity to include global license formats
+- Real-time inference optimization for deployment on edge devices
+
+---
+
+## 🙏 Acknowledgements
+
+We extend our gratitude to the organizers of **ICCCIS 2023** for providing an opportunity to present our research and to the open-source community for datasets and tools that made this project possible.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have ideas for improvement or wish to collaborate, feel free to:
+
+- Create a pull request
+- Open an issue
+- Reach out directly
+
+---
+
+## 📬 Contact
+
+For questions, feedback, or collaborations:
+
+**Rohan Reddy B**  
+📧 [rohanbadugula9@gmail.com](mailto:rohanbadugula9@gmail.com)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+⭐ *If you find this repository helpful, please consider starring it!*
