@@ -1,0 +1,32 @@
+{
+  "mercosur": {
+    "title": "Artificial Mercosur License Plates, version 2",
+    "source": "https://data.mendeley.com/datasets/nx9xbs4rgx/2",
+    "doi": "10.17632/nx9xbs4rgx.2",
+    "url": "https://data.mendeley.com/public-api/zip/nx9xbs4rgx/download/2",
+    "license": "CC BY 4.0",
+    "archive": "mercosur-v2.zip",
+    "relationship": "Versioned publisher dataset for the detection data family cited by the paper",
+    "sha256": "d4aa7c39301c2ded0198f1044a2803357d64a489f790abb028587ca78c2f32f8"
+  },
+  "characters": {
+    "title": "Plate_detect_and_recognize character dataset",
+    "source": "https://github.com/quangnhat185/Plate_detect_and_recognize",
+    "version": "6943f30ebfc14ef27d982779e0c434f38114ada4",
+    "url": "https://raw.githubusercontent.com/quangnhat185/Plate_detect_and_recognize/6943f30ebfc14ef27d982779e0c434f38114ada4/dataset_characters.zip",
+    "license": "Repository includes MIT license; underlying image provenance is not fully specified",
+    "archive": "characters-upstream.zip",
+    "relationship": "Upstream candidate/replacement; not verified as the original Kaggle dataset used in the paper",
+    "sha256": "f6b3077fa452ed893f3cf6a61b2e4acf5d3f5ab3b825e5b1f6320e7de674e4b5"
+  },
+  "openalpr": {
+    "title": "OpenALPR public benchmarks",
+    "source": "https://github.com/openalpr/benchmarks",
+    "version": "9790ed20d475be1e940a7e2a3f492a97c2ebed9b",
+    "url": "https://codeload.github.com/openalpr/benchmarks/zip/9790ed20d475be1e940a7e2a3f492a97c2ebed9b",
+    "license": "Upstream repository AGPL-3.0; preserve upstream notices",
+    "archive": "openalpr-benchmarks.zip",
+    "relationship": "Separate public end-to-end benchmark; not the original 500-image Indian phone benchmark",
+    "sha256": "0203da859119d0397b25674d59eeacb0be83bef5baa9c2e96e435e57374ac332"
+  }
+}

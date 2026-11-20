@@ -1,0 +1,354 @@
+{
+  "characters": {
+    "source": {
+      "title": "Plate_detect_and_recognize character dataset",
+      "source": "https://github.com/quangnhat185/Plate_detect_and_recognize",
+      "version": "6943f30ebfc14ef27d982779e0c434f38114ada4",
+      "url": "https://raw.githubusercontent.com/quangnhat185/Plate_detect_and_recognize/6943f30ebfc14ef27d982779e0c434f38114ada4/dataset_characters.zip",
+      "license": "Repository includes MIT license; underlying image provenance is not fully specified",
+      "archive": "characters-upstream.zip",
+      "relationship": "Upstream candidate/replacement; not verified as the original Kaggle dataset used in the paper",
+      "archive_sha256": "f6b3077fa452ed893f3cf6a61b2e4acf5d3f5ab3b825e5b1f6320e7de674e4b5",
+      "archive_bytes": 39692489,
+      "file_count": 37623
+    },
+    "dataset.json": {
+      "kind": "characters",
+      "vocabulary": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "seed": 42,
+      "val_fraction": 0.1,
+      "test_fraction": 0.1,
+      "folder_mapping": {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D",
+        "E": "E",
+        "F": "F",
+        "G": "G",
+        "H": "H",
+        "I": "I",
+        "J": "J",
+        "K": "K",
+        "L": "L",
+        "M": "M",
+        "N": "N",
+        "O": "O",
+        "P": "P",
+        "Q": "Q",
+        "R": "R",
+        "S": "S",
+        "T": "T",
+        "U": "U",
+        "V": "V",
+        "W": "W",
+        "X": "X",
+        "Y": "Y",
+        "Z": "Z"
+      },
+      "quarantine_conflicts": true,
+      "source_samples": 37623,
+      "excluded_conflicting_samples": 30,
+      "counts": {
+        "train": 30233,
+        "val": 3639,
+        "test": 3721
+      },
+      "manifest_sha256": "59e380f747a3f3aaea62272d55b62df33d39cdcc5748aa470169b96a0dcee146"
+    },
+    "quarantine.json": {
+      "reason": "Byte-identical image assigned different character labels",
+      "policy": "Exclude every copy of every conflicting hash; no labels guessed",
+      "conflicting_hashes": 10,
+      "excluded_samples": 30,
+      "records": [
+        {
+          "source": "0/0_2.jpg",
+          "label": "0",
+          "sha256": "10f1e0b6ebf14bc21f8bd5906cae8f4c9fa0bc03ded236fbd8267a0062e4ba89",
+          "group": "10f1e0b6ebf14bc21f8bd5906cae8f4c9fa0bc03ded236fbd8267a0062e4ba89"
+        },
+        {
+          "source": "0/0_753.jpg",
+          "label": "0",
+          "sha256": "6e9d2adb6a843425241ff3fe9c8a378689c474efe94604f734883a346f53f30d",
+          "group": "6e9d2adb6a843425241ff3fe9c8a378689c474efe94604f734883a346f53f30d"
+        },
+        {
+          "source": "0/0_754.jpg",
+          "label": "0",
+          "sha256": "ca37ca4f208202d552a7ea68a8940d4d71da444eb890ac9c984f100e28420d1a",
+          "group": "ca37ca4f208202d552a7ea68a8940d4d71da444eb890ac9c984f100e28420d1a"
+        },
+        {
+          "source": "0/0_755.jpg",
+          "label": "0",
+          "sha256": "230affa3ef107e31da29b28f191c3cf26652ad29207a9835047a58db005839e8",
+          "group": "230affa3ef107e31da29b28f191c3cf26652ad29207a9835047a58db005839e8"
+        },
+        {
+          "source": "0/0_756.jpg",
+          "label": "0",
+          "sha256": "b2c64604286152dc7b928a7962affc02e369f516ccfd1bf726124a4da3d68142",
+          "group": "b2c64604286152dc7b928a7962affc02e369f516ccfd1bf726124a4da3d68142"
+        },
+        {
+          "source": "0/0_757.jpg",
+          "label": "0",
+          "sha256": "ae383119121e8f52feedd30df598ec9da5731fdedd61d5830a0e5bf6bbdb0b65",
+          "group": "ae383119121e8f52feedd30df598ec9da5731fdedd61d5830a0e5bf6bbdb0b65"
+        },
+        {
+          "source": "0/0_758.jpg",
+          "label": "0",
+          "sha256": "a1ee904ab9aa62a3c111952e1e56b5868a499cf7bdd8308d2ce180ba2b37c4df",
+          "group": "a1ee904ab9aa62a3c111952e1e56b5868a499cf7bdd8308d2ce180ba2b37c4df"
+        },
+        {
+          "source": "0/0_759.jpg",
+          "label": "0",
+          "sha256": "d835f0dacf6d26960f256fe4322ef4c3dafb8df792ea58c3b7b62cf7addaddfe",
+          "group": "d835f0dacf6d26960f256fe4322ef4c3dafb8df792ea58c3b7b62cf7addaddfe"
+        },
+        {
+          "source": "0/0_760.jpg",
+          "label": "0",
+          "sha256": "b8474d862a293d6b92f7313863e8885478dff773726cdebdda89ba116a541396",
+          "group": "b8474d862a293d6b92f7313863e8885478dff773726cdebdda89ba116a541396"
+        },
+        {
+          "source": "1/1_409.jpg",
+          "label": "1",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_1.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_129.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_137.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_145.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_153.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_157.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_29.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_41.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_509.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_65.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "I/I_905.jpg",
+          "label": "I",
+          "sha256": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a",
+          "group": "2395b93a41c0209fd45f5fdb663e98070687bb7574319bfea057f0234b1d187a"
+        },
+        {
+          "source": "O/O_2.jpg",
+          "label": "O",
+          "sha256": "10f1e0b6ebf14bc21f8bd5906cae8f4c9fa0bc03ded236fbd8267a0062e4ba89",
+          "group": "10f1e0b6ebf14bc21f8bd5906cae8f4c9fa0bc03ded236fbd8267a0062e4ba89"
+        },
+        {
+          "source": "O/O_753.jpg",
+          "label": "O",
+          "sha256": "6e9d2adb6a843425241ff3fe9c8a378689c474efe94604f734883a346f53f30d",
+          "group": "6e9d2adb6a843425241ff3fe9c8a378689c474efe94604f734883a346f53f30d"
+        },
+        {
+          "source": "O/O_754.jpg",
+          "label": "O",
+          "sha256": "ca37ca4f208202d552a7ea68a8940d4d71da444eb890ac9c984f100e28420d1a",
+          "group": "ca37ca4f208202d552a7ea68a8940d4d71da444eb890ac9c984f100e28420d1a"
+        },
+        {
+          "source": "O/O_755.jpg",
+          "label": "O",
+          "sha256": "230affa3ef107e31da29b28f191c3cf26652ad29207a9835047a58db005839e8",
+          "group": "230affa3ef107e31da29b28f191c3cf26652ad29207a9835047a58db005839e8"
+        },
+        {
+          "source": "O/O_756.jpg",
+          "label": "O",
+          "sha256": "b2c64604286152dc7b928a7962affc02e369f516ccfd1bf726124a4da3d68142",
+          "group": "b2c64604286152dc7b928a7962affc02e369f516ccfd1bf726124a4da3d68142"
+        },
+        {
+          "source": "O/O_757.jpg",
+          "label": "O",
+          "sha256": "ae383119121e8f52feedd30df598ec9da5731fdedd61d5830a0e5bf6bbdb0b65",
+          "group": "ae383119121e8f52feedd30df598ec9da5731fdedd61d5830a0e5bf6bbdb0b65"
+        },
+        {
+          "source": "O/O_758.jpg",
+          "label": "O",
+          "sha256": "a1ee904ab9aa62a3c111952e1e56b5868a499cf7bdd8308d2ce180ba2b37c4df",
+          "group": "a1ee904ab9aa62a3c111952e1e56b5868a499cf7bdd8308d2ce180ba2b37c4df"
+        },
+        {
+          "source": "O/O_759.jpg",
+          "label": "O",
+          "sha256": "d835f0dacf6d26960f256fe4322ef4c3dafb8df792ea58c3b7b62cf7addaddfe",
+          "group": "d835f0dacf6d26960f256fe4322ef4c3dafb8df792ea58c3b7b62cf7addaddfe"
+        },
+        {
+          "source": "O/O_760.jpg",
+          "label": "O",
+          "sha256": "b8474d862a293d6b92f7313863e8885478dff773726cdebdda89ba116a541396",
+          "group": "b8474d862a293d6b92f7313863e8885478dff773726cdebdda89ba116a541396"
+        }
+      ]
+    }
+  },
+  "mercosur": {
+    "source": {
+      "title": "Artificial Mercosur License Plates, version 2",
+      "source": "https://data.mendeley.com/datasets/nx9xbs4rgx/2",
+      "doi": "10.17632/nx9xbs4rgx.2",
+      "url": "https://data.mendeley.com/public-api/zip/nx9xbs4rgx/download/2",
+      "license": "CC BY 4.0",
+      "archive": "mercosur-v2.zip",
+      "relationship": "Versioned publisher dataset for the detection data family cited by the paper",
+      "archive_sha256": "d4aa7c39301c2ded0198f1044a2803357d64a489f790abb028587ca78c2f32f8",
+      "archive_bytes": 1634711438,
+      "file_count": 7673
+    },
+    "dataset.json": {
+      "kind": "detection",
+      "seed": 42,
+      "val_fraction": 0.1,
+      "test_fraction": 0.1,
+      "counts": {
+        "train": 3066,
+        "val": 383,
+        "test": 383
+      },
+      "manifest_sha256": "c742744d8510b9e89f9533b89294d0c77ea1734980c6be71359b72f11a127d21"
+    },
+    "source-audit.json": {
+      "orphan_labels": [
+        "parking_lot1_100.txt",
+        "parking_lot1_188.txt",
+        "parking_lot1_36.txt",
+        "parking_lot1_37.txt",
+        "parking_lot1_88.txt",
+        "parking_lot1_89.txt",
+        "parking_lot1_98.txt",
+        "parking_lot1_99.txt"
+      ],
+      "grouping": "byte-identical files only",
+      "vehicle_independence_verified": false
+    }
+  },
+  "openalpr": {
+    "source": {
+      "title": "OpenALPR public benchmarks",
+      "source": "https://github.com/openalpr/benchmarks",
+      "version": "9790ed20d475be1e940a7e2a3f492a97c2ebed9b",
+      "url": "https://codeload.github.com/openalpr/benchmarks/zip/9790ed20d475be1e940a7e2a3f492a97c2ebed9b",
+      "license": "Upstream repository AGPL-3.0; preserve upstream notices",
+      "archive": "openalpr-benchmarks.zip",
+      "relationship": "Separate public end-to-end benchmark; not the original 500-image Indian phone benchmark",
+      "archive_sha256": "0203da859119d0397b25674d59eeacb0be83bef5baa9c2e96e435e57374ac332",
+      "archive_bytes": 217824648,
+      "file_count": 1707
+    },
+    "conversion.json": {
+      "source": "OpenALPR public end-to-end benchmark; separate from the paper benchmark",
+      "images": 443,
+      "plates": 443,
+      "by_region": {
+        "br": 113,
+        "eu": 108,
+        "us": 222
+      },
+      "excluded": [
+        {
+          "image": "br/PJT2905.jpg",
+          "reason": "invalid ground-truth box"
+        }
+      ],
+      "images_without_annotations": [
+        "br/PAG5219.jpg",
+        "usimages/car-00.png",
+        "usimages/car-01.png",
+        "usimages/car-02.png",
+        "usimages/car-03.png",
+        "usimages/car-04.png",
+        "usimages/car-05.png",
+        "usimages/car-06.png",
+        "usimages/car-07.png",
+        "usimages/car-08.png",
+        "usimages/car-09.png",
+        "usimages/car-10.png",
+        "usimages/car-11.png",
+        "usimages/car-12.png",
+        "usimages/car-13.png",
+        "usimages/car-14.png",
+        "usimages/car-15.png",
+        "usimages/car-16.png",
+        "usimages/car-17.png",
+        "usimages/car-18.png",
+        "usimages/car-19.png",
+        "usimages/car-20.png",
+        "usimages/car-21.png"
+      ],
+      "manifest_sha256": "6604de8b8b3cfbff84d8e56b71e5dc7931f9902294ffc84d214c3a7a07f8dd46"
+    }
+  }
+}
