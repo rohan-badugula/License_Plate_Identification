@@ -1,0 +1,8 @@
+{
+  "width": 333,
+  "height": 150,
+  "threshold": 200,
+  "method": "otsu",
+  "polarity": "auto",
+  "min_height": 0.15
+}

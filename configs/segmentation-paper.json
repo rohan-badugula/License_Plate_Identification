@@ -1,0 +1,16 @@
+{
+  "width": 333,
+  "height": 75,
+  "threshold": 200,
+  "method": "fixed",
+  "polarity": "dark",
+  "kernel_size": 3,
+  "border": 3,
+  "min_height": 0.2,
+  "max_height": 0.95,
+  "min_width": 0.005,
+  "max_width": 0.25,
+  "min_aspect": 0.08,
+  "max_aspect": 1.2,
+  "row_tolerance": 0.6
+}
