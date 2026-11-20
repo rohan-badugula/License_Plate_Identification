@@ -25,6 +25,11 @@ def parser() -> argparse.ArgumentParser:
         else:
             p.add_argument("--source", type=Path, required=True)
             p.add_argument("--mapping", type=Path, help="JSON mapping folder name to character")
+            p.add_argument(
+                "--quarantine-conflicts",
+                action="store_true",
+                help="Exclude all copies of byte-identical glyphs with conflicting labels",
+            )
         p.add_argument("--output", type=Path, required=True)
         p.add_argument("--val-fraction", type=float, default=0.1)
         p.add_argument("--test-fraction", type=float, default=0.1)
@@ -107,7 +112,13 @@ def execute(a: argparse.Namespace):
         manifest = (
             prepare_detection(a.images, a.labels, a.output, groups_file=a.groups, **options)
             if a.command == "prepare-detection"
-            else prepare_characters(a.source, a.output, mapping_file=a.mapping, **options)
+            else prepare_characters(
+                a.source,
+                a.output,
+                mapping_file=a.mapping,
+                quarantine_conflicts=a.quarantine_conflicts,
+                **options,
+            )
         )
         return {"manifest": str(manifest)}
     if a.command == "train-recognizer":

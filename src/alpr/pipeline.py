@@ -242,6 +242,7 @@ def evaluate_pipeline(
         samples.append(
             {
                 "image": entry["image"],
+                "region": entry.get("region", "unspecified"),
                 "source_sha256": digest,
                 "truth": truth,
                 "predictions": result["plates"],
@@ -257,5 +258,11 @@ def evaluate_pipeline(
         "mean_latency_seconds": float(np.mean([s["elapsed_seconds"] for s in samples])),
         "samples": samples,
     }
+    regions = sorted({s["region"] for s in samples})
+    if regions != ["unspecified"]:
+        summary["by_region"] = {
+            region: plate_metrics([s for s in samples if s["region"] == region], iou_threshold)
+            for region in regions
+        }
     write_json(output / "metrics.json", summary)
     return summary

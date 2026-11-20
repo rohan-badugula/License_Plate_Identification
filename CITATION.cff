@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the published paper when using this implementation."
+title: "Encompassing YOLOv8 and EfficientNet B7 for Automatic License Plate Identification"
+type: software
+authors:
+  - family-names: "B"
+    given-names: "Rohan Reddy"
+  - family-names: "Engu"
+    given-names: "Himesh"
+  - family-names: "Gunti"
+    given-names: "Swathi"
+  - family-names: "S"
+    given-names: "Southarrajan"
+doi: "10.1109/ICCCIS60361.2023.10425775"
+url: "https://github.com/rohan-badugula/License_Plate_Identification"

@@ -1,0 +1,5 @@
+include CITATION.cff
+include requirements-verified.txt
+recursive-include configs *.json
+recursive-include docs *.md *.json
+recursive-include scripts *.py

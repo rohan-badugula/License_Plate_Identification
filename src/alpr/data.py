@@ -165,6 +165,7 @@ def prepare_characters(
     val: float = 0.1,
     test: float = 0.1,
     seed: int = 42,
+    quarantine_conflicts: bool = False,
 ) -> Path:
     source = source.resolve()
     mapping = json.loads(mapping_file.read_text()) if mapping_file else {c: c for c in VOCABULARY}
@@ -172,21 +173,18 @@ def prepare_characters(
         raise ValueError("Mapping must cover all 36 alphanumeric characters exactly once")
     if len(mapping) != 36:
         raise ValueError("Mapping must contain exactly 36 folders")
-    records, seen = [], {}
+    raw_records, seen = [], defaultdict(set)
     for folder, character in mapping.items():
         directory = source / folder
         if not directory.is_dir():
             raise ValueError(f"Missing character folder {directory}")
-        class_records = []
         for path in sorted(directory.rglob("*")):
             if path.suffix.lower() not in IMAGE_SUFFIXES:
                 continue
             read_image(path)
             digest = sha256(path)
-            if digest in seen and seen[digest] != character:
-                raise ValueError(f"Same image assigned different character labels: {path}")
-            seen[digest] = character
-            class_records.append(
+            seen[digest].add(character)
+            raw_records.append(
                 {
                     "source": path.relative_to(source).as_posix(),
                     "label": character,
@@ -194,9 +192,32 @@ def prepare_characters(
                     "group": digest,
                 }
             )
+    conflicts = {digest for digest, characters in seen.items() if len(characters) > 1}
+    if conflicts and not quarantine_conflicts:
+        raise ValueError(
+            "Same image assigned different character labels; inspect data or use "
+            "--quarantine-conflicts to exclude every copy of conflicting images"
+        )
+    excluded = [r for r in raw_records if r["sha256"] in conflicts]
+    records = []
+    for character in VOCABULARY:
+        class_records = [
+            r for r in raw_records if r["label"] == character and r["sha256"] not in conflicts
+        ]
         grouped_split(class_records, val, test, seed)
         records.extend(class_records)
     output = new_run(output).resolve()
+    if excluded:
+        write_json(
+            output / "quarantine.json",
+            {
+                "reason": "Byte-identical image assigned different character labels",
+                "policy": "Exclude every copy of every conflicting hash; no labels guessed",
+                "conflicting_hashes": len(conflicts),
+                "excluded_samples": len(excluded),
+                "records": excluded,
+            },
+        )
     for record in records:
         relative = Path(record["source"])
         target = output / "images" / relative
@@ -213,6 +234,9 @@ def prepare_characters(
             "val_fraction": val,
             "test_fraction": test,
             "folder_mapping": mapping,
+            "quarantine_conflicts": quarantine_conflicts,
+            "source_samples": len(raw_records),
+            "excluded_conflicting_samples": len(excluded),
         },
     )
 
@@ -247,6 +271,11 @@ def load_manifest(path: Path, split: str | None = None, verify_hashes: bool = Tr
             if verify_hashes and sha256(item) != record[hash_field]:
                 raise ValueError(f"Dataset content changed since preparation: {item}")
     selected = [r for r in records if split is None or r["split"] == split]
+    metadata_file = root / "dataset.json"
+    if metadata_file.is_file():
+        metadata = json.loads(metadata_file.read_text())
+        if metadata.get("manifest_sha256") != sha256(path):
+            raise ValueError("Manifest changed since preparation; prepare a new audited dataset")
     if not selected:
         raise ValueError(f"No samples in split {split}")
     return selected

@@ -31,6 +31,24 @@ claim of bit-for-bit replication of a 2023 training environment. The original sp
 indices, dataset versions, B7 weights and 500-image benchmark are not in the repository.
 Synthetic fixtures exercise software paths only and cannot establish recognition accuracy.
 
+## Public-data acquisition follow-up
+
+The versioned publisher Mercosur archive was downloaded and contains 3,832 images,
+3,840 annotations and eight orphan label files. The publisher's five acquisition
+categories are not five independently sampled countries. The pinned public character
+archive contains 37,623 images, matching the paper count, but exact identity with the
+historical Kaggle version cannot be established. Thirty byte-identical files with
+conflicting character labels are explicitly quarantined. The separate OpenALPR public
+benchmark yields 443 usable full-image annotations after documented exclusions.
+See [DATASETS.md](DATASETS.md) and [DATA_AUDIT.json](DATA_AUDIT.json) for counts,
+checksums and the reproduction limits. None of these downloads recovers the private
+500-image Indian benchmark or the original trained B7 weights.
+
+Glyph centering preserves aspect ratio rather than stretching every contour to the
+notebook's 20×40 rectangle. All five classifier baselines use the same new head and
+preprocessing for controlled comparisons; the historical Inception head and RMSprop
+experiment are not silently represented as the same training recipe.
+
 ## References for implementation APIs
 
 - [Ultralytics YOLOv8](https://docs.ultralytics.com/models/yolov8/)

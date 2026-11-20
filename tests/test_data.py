@@ -90,3 +90,26 @@ def test_characters_explicit_vocabulary_and_stratification(tmp_path):
 def test_numeric_mapping_is_never_guessed(tmp_path):
     with pytest.raises(ValueError, match="Missing character folder"):
         prepare_characters(tmp_path, tmp_path / "out")
+
+
+def test_conflicting_glyph_quarantine_excludes_every_copy_and_preserves_raw(tmp_path):
+    source = tmp_path / "raw"
+    for index, character in enumerate(VOCABULARY):
+        directory = source / character
+        directory.mkdir(parents=True)
+        for i in range(4):
+            canvas = np.zeros((28, 28, 3), np.uint8)
+            canvas[2:25, 4:20] = index * 4 + i + 1
+            cv2.imwrite(str(directory / f"{i}.png"), canvas)
+    duplicate = (source / "0/0.png").read_bytes()
+    (source / "O/conflict.png").write_bytes(duplicate)
+    with pytest.raises(ValueError, match="different character labels"):
+        prepare_characters(source, tmp_path / "strict")
+    manifest = prepare_characters(source, tmp_path / "clean", quarantine_conflicts=True)
+    report = json.loads((manifest.parent / "quarantine.json").read_text())
+    assert report["excluded_samples"] == 2 and report["conflicting_hashes"] == 1
+    records = load_manifest(manifest)
+    assert len(records) == 143
+    assert (source / "0/0.png").read_bytes() == duplicate
+    assert (source / "O/conflict.png").is_file()
+    assert all(r["source"] not in {"0/0.png", "O/conflict.png"} for r in records)
