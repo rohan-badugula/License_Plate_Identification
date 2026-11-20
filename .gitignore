@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+data/
+runs/
+artifacts/
+.DS_Store
+.env
+.env.*
+# Keep the already-versioned historical artifacts; do not add new weights/data.
+*.pt
+*.pth
+*.onnx
+*.h5
+*.hdf5
+*.npy
+*.npz
+Encompassing_YOLOv8_and_EfficientNet_B7_for_Automatic_License_Plate_Identification.pdf
