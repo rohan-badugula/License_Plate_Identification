@@ -14,7 +14,7 @@ Local verification date: November 20, 2026.
 
 ## Completed checks
 
-- 48 pytest tests passed locally, including all five real classifier architectures,
+- 51 pytest tests passed locally, including all five real classifier architectures,
   checkpoint save/load and batching, archived YOLO loading/prediction, image/video
   paths, dataset integrity, contour behavior and metric denominators.
 - Ruff lint and formatting checks passed.
@@ -49,6 +49,7 @@ not substituted for a new run. The paper's private benchmark remains unavailable
 
 ## Hosted CI
 
-The workflow covers Python 3.11/3.13 on Ubuntu, with lint, formatting, tests and package
-builds. A committed workflow is not evidence that a hosted run passed; inspect the
-actual GitHub check status on the pull request.
+The Python 3.11 and 3.13 Ubuntu jobs both passed lint, formatting, all 48 tests at
+commit `5fa9516`, packaging, and CLI startup in [run 44816973684](https://github.com/rohan-badugula/License_Plate_Identification/actions/runs/44816973684).
+Subsequent commits add continuation tests and use CPU-only PyTorch wheels in CI;
+check the current head separately.

@@ -140,6 +140,14 @@ Splitting is stratified by character and groups identical image files. Every cla
 
 If folders are numeric class IDs, use `--mapping your-mapping.json`. The mapping must explicitly cover all 36 classes. [The example mapping](configs/character-mapping.example.json) demonstrates one convention; **verify it against the dataset rather than assuming it is correct**. Folder names such as `class_A` also require an explicit mapping. Identical files assigned to different characters are rejected for review by default. `--quarantine-conflicts` explicitly excludes every copy of conflicting hashes and records the exclusions; it never guesses a replacement label.
 
+## Run the prepared public experiment end to end
+
+```bash
+python scripts/run_public_experiment.py --prepared data/prepared --output runs/public-experiment --device auto
+```
+
+This trains a fresh detector for 10 epochs and B7 for 15 epochs, evaluates both on their test partitions, evaluates the separate public benchmark with per-region reporting, and saves an annotated example. `progress.json` records completed stages. `--recognizer-checkpoint` can explicitly reuse a separately trained B7 checkpoint; provenance remains in the reports. Full runs can take substantial time on a personal computer.
+
 ## Train
 
 ### YOLOv8 detector
@@ -289,6 +297,12 @@ Text normalization uppercases and removes ASCII whitespace and hyphens; it does 
 | Detection mAP50 | 99.5% | Historical claim; original artifacts preserved |
 | B7 character accuracy | 98.22% | Historical claim; original recognition weights unavailable |
 | Full-plate recognition, private phone set | 483 / 500 = 96.6% | Original labeled benchmark unavailable |
+
+<!-- PUBLIC_RESULTS_START -->
+
+Full public-data training is in progress. Final held-out metrics will be recorded only after the full workflow and verification checks finish.
+
+<!-- PUBLIC_RESULTS_END -->
 
 The archived detector CSV's final row contains mAP50 **0.99496** and mAP50–95 **0.9795**. This is a preserved training/validation log, not a fresh test. Its `args.yaml` references `facemask.yaml`, and the dataset/split linkage is not recoverable from those files alone.
 
